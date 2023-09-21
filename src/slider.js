@@ -8,7 +8,7 @@ const Slider = () => {
       setTimeout(() => {
         innerSlides[i].style.width = "300px";
         innerSlides[i].style.backgroundColor = "red";
-      }, 0);
+      }, 1000);
       setTimeout(() => {
         innerSlides[i].style.backgroundColor = "white";
         innerSlides[i].style.width = "0px";
@@ -19,7 +19,7 @@ const Slider = () => {
       }
     }
   }
-  iterateInnerSlides(innerSlides, 5000);
+  iterateInnerSlides(innerSlides, 6000);
 
   async function iteratePhotoSlides(tests, delay) {
     for (let i = 0; i < tests.length; i++) {
@@ -47,7 +47,7 @@ const Slider = () => {
       }
     }
   }
-  iteratePhotoSlides(slides, 5000);
+  iteratePhotoSlides(slides, 6000);
 
   return (
     <div className="main-container">
