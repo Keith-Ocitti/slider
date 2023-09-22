@@ -1,14 +1,12 @@
 import "./slider.css";
+import { useEffect } from "react";
 const Slider = () => {
-  const innerSlides = document.querySelectorAll(".innerslidebar");
-  const slides = document.querySelectorAll(".slider");
-
   async function iterateInnerSlides(innerSlides, delay) {
     for (let i = 0; i < innerSlides.length; i++) {
       setTimeout(() => {
         innerSlides[i].style.width = "300px";
         innerSlides[i].style.backgroundColor = "red";
-      }, 1000);
+      }, 0);
       setTimeout(() => {
         innerSlides[i].style.backgroundColor = "white";
         innerSlides[i].style.width = "0px";
@@ -19,7 +17,6 @@ const Slider = () => {
       }
     }
   }
-  iterateInnerSlides(innerSlides, 6000);
 
   async function iteratePhotoSlides(tests, delay) {
     for (let i = 0; i < tests.length; i++) {
@@ -47,7 +44,13 @@ const Slider = () => {
       }
     }
   }
-  iteratePhotoSlides(slides, 6000);
+
+  useEffect(() => {
+    const innerSlides = document.querySelectorAll(".innerslidebar");
+    const slides = document.querySelectorAll(".slider");
+    iteratePhotoSlides(slides, 5000);
+    iterateInnerSlides(innerSlides, 5000);
+  });
 
   return (
     <div className="main-container">
@@ -62,7 +65,7 @@ const Slider = () => {
         ></div>
         <div
           className="slider three"
-          style={{ backgroundImage: `url("./img/bg3.jpg")` }}
+          style={{ backgroundImage: `url("./img/bg4.jpg")` }}
         ></div>
       </div>
       <div className="slidebar-container">
